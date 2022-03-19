@@ -1,0 +1,23 @@
+[package]
+name = "nook_os"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sunwook Eom <sunwook5492@gmail.com>"]
+
+[profile.release]
+lto = true
+
+[features]
+default = []
+bsp_rpi3 = []
+bsp_rpi4 = []
+
+[[bin]]
+name = "kernel"
+path = "src/main.rs"
+
+##--------------------------------------------------------------------------------------------------
+## Dependencies
+##--------------------------------------------------------------------------------------------------
+
+[dependencies]
