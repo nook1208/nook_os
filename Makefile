@@ -1,6 +1,8 @@
 ## SPDX-License-Identifier: MIT OR Apache-2.0
 ##
 ## Copyright (c) 2018-2022 Andre Richter <andre.o.richter@gmail.com>
+## Copyright (c) 2022 Sunwook Eom <sunwook5492@gmail.com>
+
 
 include common/format.mk
 include common/docker.mk
@@ -28,7 +30,7 @@ ifeq ($(BSP),rpi3)
     OBJDUMP_BINARY    = aarch64-none-elf-objdump
     NM_BINARY         = aarch64-none-elf-nm
     READELF_BINARY    = aarch64-none-elf-readelf
-    LD_SCRIPT_PATH    = $(shell pwd)/src/arch/arm64/kernel
+    LD_SCRIPT_PATH    = $(shell pwd)/src/arch/aarch64/kernel
     RUSTC_MISC_ARGS   = -C target-cpu=cortex-a53
 else ifeq ($(BSP),rpi4)
     TARGET            = aarch64-unknown-none-softfloat
@@ -39,7 +41,7 @@ else ifeq ($(BSP),rpi4)
     OBJDUMP_BINARY    = aarch64-none-elf-objdump
     NM_BINARY         = aarch64-none-elf-nm
     READELF_BINARY    = aarch64-none-elf-readelf
-    LD_SCRIPT_PATH    = $(shell pwd)/src/arch/arm64/kernel
+    LD_SCRIPT_PATH    = $(shell pwd)/src/arch/aarch64/kernel
     RUSTC_MISC_ARGS   = -C target-cpu=cortex-a72
 endif
 
