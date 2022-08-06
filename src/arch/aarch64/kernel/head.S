@@ -6,9 +6,9 @@
  * GNU Assembler Guide: https://sourceware.org/binutils/docs/as/
  */
 
- .global primary_entry 
+.global primary_entry 
 
- primary_entry:
+primary_entry:
  .loop_start:
     wfe
     b .loop_start
