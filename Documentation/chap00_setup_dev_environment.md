@@ -11,6 +11,9 @@
       ```
 	2. Install Rust Toolchain
       ```bash
+      rustup default nightly-2022-07-31-x86_64-unknown-linux-gnu
+      rustup target add aarch64-unknown-none-softfloat
+      rustup component add llvm-tools-preview
       cargo install cargo-binutils rustfilt
 	  ```
 ### Trouble Shooting
