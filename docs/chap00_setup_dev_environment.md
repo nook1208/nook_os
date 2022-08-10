@@ -1,6 +1,6 @@
 # Setup Development Environment
 
-### Install system requirements
+## Install system requirements
 1. [Install Docker](https://docs.docker.com/engine/install/ubuntu/)
 1. Prepare the `Rust` toolchain. Most of it will be handled on first use through the
 	1. Intall Rust
@@ -16,7 +16,7 @@
       rustup component add llvm-tools-preview
       cargo install cargo-binutils rustfilt
 	  ```
-### Trouble Shooting
+## Trouble Shooting
 #### Problem 1.
 GNU MAKE version is order than 4.2:  
 ```bash
