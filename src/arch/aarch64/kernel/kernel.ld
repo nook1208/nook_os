@@ -11,7 +11,21 @@ SECTIONS
 {
     . = _rasp_load_addr;
 
-    .text : {
-        KEEP(*(.text))
+    /* stack grows to a lower address per AAPCS64 starting just before .text */
+    _stack_start = .;
+
+    .text : { KEEP(*(.text*)) }
+
+    .rodata : ALIGN(8) { *(.rodata*) }
+    .data : { *(.data*) }
+    /* bss section doesn't have to be loaded to save time */
+    .bss (NOLOAD) : ALIGN(16) {
+        __bss_start = .;
+        *(.bss*);
+        __bss_end = ALIGN(16);
     }
+
+    _end = .;
+
+   /DISCARD/ : { *(.comment) }
 }
