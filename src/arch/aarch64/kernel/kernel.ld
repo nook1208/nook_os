@@ -5,6 +5,7 @@
 
 _rasp_load_addr = 0x80000;
 
+/* Define the first executable instruction */
 ENTRY(_rasp_load_addr)
 
 SECTIONS
@@ -14,7 +15,10 @@ SECTIONS
     /* stack grows to a lower address per AAPCS64 starting just before .text */
     _stack_start = .;
 
-    .text : { KEEP(*(.text*)) }
+    .text : { 
+        KEEP(*(.text.head))
+        *(.text*)
+    }
 
     .rodata : ALIGN(8) { *(.rodata*) }
     .data : { *(.data*) }
